@@ -64,7 +64,7 @@ fi
 
 while [ true ]
 do
-	curl -I -s testme.getipaddr.net | grep "HTTP/1.1 200 OK" -q;
+	curl -I -s "$domain" | grep "HTTP/1.1 200 OK" -q;
 	if [ $? -eq 1 ]
 	then
 		echo `date` "service is down, going to backup IP" >> cf.log
